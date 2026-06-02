@@ -1078,8 +1078,8 @@ backdrop-filter: blur(26px) saturate(165%);
   }
 
   to {
-    width: 82px;
-    height: 82px;
+    width: 56px;
+    height: 56px;
     opacity: 0;
   }
 }
