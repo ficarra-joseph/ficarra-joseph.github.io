@@ -363,6 +363,8 @@ footer {
   line-height: 1.25;
 }
 
+
+
 .project-content p {
   color: var(--muted);
 }
@@ -487,7 +489,7 @@ footer {
 .animated-bg {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
   background:
     radial-gradient(circle at 20% 20%, rgba(0, 85, 162, 0.22), transparent 28%),
