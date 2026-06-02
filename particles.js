@@ -123,17 +123,6 @@ document.addEventListener("click", function (event) {
     ripple.remove();
   }, 700);
 });
-const scrollProgress = document.querySelector(".scroll-progress");
-
-window.addEventListener("scroll", function () {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-
-  if (scrollProgress) {
-    scrollProgress.style.width = `${progress}%`;
-  }
-});
 
 // Scroll progress bar
 const scrollProgress = document.querySelector(".scroll-progress");
@@ -148,24 +137,29 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Scroll reveal animation
-const revealElements = document.querySelectorAll("section");
+// Section fade-in on scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const revealElements = document.querySelectorAll("main section");
 
-revealElements.forEach((element) => {
-  element.classList.add("reveal");
-});
+  revealElements.forEach((element) => {
+    element.classList.add("reveal");
+  });
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.01 }
-);
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.01,
+      rootMargin: "0px 0px -40px 0px"
+    }
+  );
 
-revealElements.forEach((element) => {
-  revealObserver.observe(element);
+  revealElements.forEach((element) => {
+    revealObserver.observe(element);
+  });
 });
