@@ -1435,3 +1435,126 @@ backdrop-filter: blur(26px) saturate(165%);
     height: 42px;
   }
 }
+
+/* Final cleanup for connect icon buttons */
+
+.connect-links.icon-links {
+  display: grid;
+  grid-template-columns: repeat(2, 92px);
+  grid-template-rows: repeat(2, 92px);
+  gap: 26px;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Remove old button box styling */
+.connect-links.icon-links .icon-link {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  margin: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-decoration: none;
+  overflow: visible;
+}
+
+/* Make the colored icon itself the button */
+.connect-links.icon-links .icon-badge {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.connect-links.icon-links .icon-badge svg {
+  width: 48px;
+  height: 48px;
+  fill: currentColor;
+}
+
+.connect-links.icon-links .icon-link:hover .icon-badge {
+  transform: translateY(-4px) scale(1.04);
+  filter: brightness(1.1);
+}
+
+/* Icon colors */
+.connect-links.icon-links .icon-link.linkedin .icon-badge {
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.38), rgba(10, 102, 194, 0.16));
+  color: #0A66C2;
+  border: 1px solid rgba(10, 102, 194, 0.8);
+  box-shadow: 0 0 28px rgba(10, 102, 194, 0.24);
+}
+
+.connect-links.icon-links .icon-link.github .icon-badge {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.24), rgba(248, 250, 252, 0.08));
+  color: #F8FAFC;
+  border: 1px solid rgba(248, 250, 252, 0.52);
+  box-shadow: 0 0 28px rgba(248, 250, 252, 0.10);
+}
+
+.connect-links.icon-links .icon-link.email .icon-badge {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.36), rgba(239, 68, 68, 0.14));
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.78);
+  box-shadow: 0 0 28px rgba(239, 68, 68, 0.20);
+}
+
+.connect-links.icon-links .icon-link.resume .icon-badge {
+  background: linear-gradient(135deg, rgba(229, 168, 35, 0.38), rgba(229, 168, 35, 0.14));
+  color: var(--sjsu-gold);
+  border: 1px solid rgba(229, 168, 35, 0.78);
+  box-shadow: 0 0 28px rgba(229, 168, 35, 0.20);
+}
+
+/* Move tooltips ABOVE the icons so they do not cover the bottom row */
+.connect-links.icon-links .icon-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -40px;
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--text);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 50;
+}
+
+.connect-links.icon-links .icon-link:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 850px) {
+  .connect-card {
+    grid-template-columns: 1fr;
+  }
+
+  .connect-links.icon-links {
+    justify-content: start;
+  }
+}
