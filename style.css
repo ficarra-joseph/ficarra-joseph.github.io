@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 :root {
   --bg: #0B1120;
   --bg-soft: #111827;
@@ -21,8 +22,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: transparent;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;  background: transparent;
   color: var(--text);
   line-height: 1.6;
 }
@@ -707,4 +707,48 @@ header p {
 
 #experience .card {
   border-left: 4px solid var(--sjsu-gold);
+}
+/* Font polish */
+
+h1,
+h2,
+h3,
+.connect-main h2,
+.about-card h2,
+.announcement h2 {
+  font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+header h1 {
+  font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+nav a,
+.eyebrow,
+.project-meta,
+.tag,
+.badge,
+.status-strip span,
+.hero-actions a,
+.connect-links a,
+.project-button {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body,
+p,
+li {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.eyebrow {
+  letter-spacing: 0.16em;
+}
+
+.project-content h3,
+.card h3 {
+  letter-spacing: -0.025em;
 }
