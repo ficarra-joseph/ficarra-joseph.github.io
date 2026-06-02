@@ -108,3 +108,18 @@ resizeCanvas();
 if (!prefersReducedMotion) {
   updateParticles();
 }
+
+// Subtle click ripple animation
+document.addEventListener("click", function (event) {
+  const ripple = document.createElement("span");
+  ripple.className = "click-ripple";
+
+  ripple.style.left = `${event.clientX}px`;
+  ripple.style.top = `${event.clientY}px`;
+
+  document.body.appendChild(ripple);
+
+  setTimeout(() => {
+    ripple.remove();
+  }, 700);
+});
