@@ -563,7 +563,7 @@ footer {
   pointer-events: none;
   opacity: 0.85;
 }
-/* Semiconductor / PCB trace hero background */
+/* Refined semiconductor-inspired hero background */
 
 header {
   position: relative;
@@ -575,81 +575,64 @@ header::before {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.55;
-  background:
-    /* faint grid */
-    linear-gradient(rgba(47, 143, 234, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(47, 143, 234, 0.09) 1px, transparent 1px),
-
-    /* horizontal trace lines */
-    linear-gradient(90deg, transparent 0 10%, rgba(47, 143, 234, 0.34) 10% 34%, transparent 34% 100%),
-    linear-gradient(90deg, transparent 0 55%, rgba(229, 168, 35, 0.28) 55% 76%, transparent 76% 100%),
-    linear-gradient(90deg, transparent 0 20%, rgba(47, 143, 234, 0.24) 20% 62%, transparent 62% 100%),
-
-    /* vertical trace lines */
-    linear-gradient(0deg, transparent 0 18%, rgba(47, 143, 234, 0.28) 18% 48%, transparent 48% 100%),
-    linear-gradient(0deg, transparent 0 52%, rgba(229, 168, 35, 0.20) 52% 80%, transparent 80% 100%),
-
-    /* base glow */
-    radial-gradient(circle at 18% 30%, rgba(0, 85, 162, 0.26), transparent 22%),
-    radial-gradient(circle at 78% 28%, rgba(229, 168, 35, 0.13), transparent 24%);
-
+  opacity: 0.38;
+  background-image:
+    linear-gradient(rgba(47, 143, 234, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 143, 234, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 20% 25%, rgba(0, 85, 162, 0.28), transparent 24%),
+    radial-gradient(circle at 82% 30%, rgba(229, 168, 35, 0.14), transparent 26%);
   background-size:
-    64px 64px,
-    64px 64px,
-    620px 3px,
-    520px 3px,
-    760px 2px,
-    3px 420px,
-    2px 520px,
+    72px 72px,
+    72px 72px,
     auto,
     auto;
-
-  background-position:
-    0 0,
-    0 0,
-    8% 26%,
-    18% 62%,
-    35% 78%,
-    74% 18%,
-    28% 42%,
-    center,
-    center;
-
-  animation: pcbDrift 34s linear infinite;
+  animation: heroGridDrift 38s linear infinite;
 }
 
 header::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  opacity: 0.46;
-  background:
-    /* vias / pads */
-    radial-gradient(circle, rgba(248, 250, 252, 0.72) 0 2px, rgba(47, 143, 234, 0.18) 3px 8px, transparent 9px),
-    radial-gradient(circle, rgba(229, 168, 35, 0.72) 0 2px, rgba(229, 168, 35, 0.16) 3px 8px, transparent 9px),
-    radial-gradient(circle, rgba(248, 250, 252, 0.60) 0 2px, rgba(47, 143, 234, 0.16) 3px 8px, transparent 9px),
+  width: 470px;
+  height: 470px;
+  right: 7%;
+  top: 48%;
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 0;
+  opacity: 0.24;
+  border: 2px solid rgba(47, 143, 234, 0.55);
+  border-radius: 34px;
+  box-shadow:
+    0 0 50px rgba(47, 143, 234, 0.22),
+    inset 0 0 50px rgba(47, 143, 234, 0.10);
 
-    /* short angled traces */
-    linear-gradient(135deg, transparent 0 46%, rgba(47, 143, 234, 0.28) 47% 49%, transparent 50% 100%),
-    linear-gradient(45deg, transparent 0 48%, rgba(229, 168, 35, 0.22) 49% 51%, transparent 52% 100%);
+  background:
+    /* internal chip grid */
+    linear-gradient(rgba(248, 250, 252, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 250, 252, 0.06) 1px, transparent 1px),
+
+    /* chip routing lines */
+    linear-gradient(90deg, transparent 0 18%, rgba(47, 143, 234, 0.55) 18% 22%, transparent 22% 100%),
+    linear-gradient(90deg, transparent 0 58%, rgba(229, 168, 35, 0.42) 58% 61%, transparent 61% 100%),
+    linear-gradient(0deg, transparent 0 28%, rgba(47, 143, 234, 0.48) 28% 31%, transparent 31% 100%),
+    linear-gradient(0deg, transparent 0 68%, rgba(229, 168, 35, 0.36) 68% 71%, transparent 71% 100%),
+
+    /* vias / nodes */
+    radial-gradient(circle, rgba(248, 250, 252, 0.20) 0 2px, transparent 3px),
+
+    /* chip body */
+    linear-gradient(135deg, rgba(0, 85, 162, 0.18), rgba(11, 17, 32, 0.72));
 
   background-size:
-    210px 150px,
-    310px 210px,
-    260px 190px,
-    440px 250px,
-    520px 300px;
+    38px 38px,
+    38px 38px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    42px 42px,
+    100% 100%;
 
-  background-position:
-    12% 28%,
-    82% 34%,
-    52% 76%,
-    72% 26%,
-    18% 80%;
-
-  animation: pcbPadsFloat 18s ease-in-out infinite alternate;
+  animation: chipFloat 11s ease-in-out infinite alternate;
 }
 
 header h1,
@@ -658,40 +641,39 @@ header p {
   z-index: 2;
 }
 
-@keyframes pcbDrift {
+@keyframes heroGridDrift {
   from {
     background-position:
       0 0,
       0 0,
-      8% 26%,
-      18% 62%,
-      35% 78%,
-      74% 18%,
-      28% 42%,
       center,
       center;
   }
 
   to {
     background-position:
-      64px 64px,
-      64px 64px,
-      14% 26%,
-      22% 62%,
-      40% 78%,
-      74% 24%,
-      28% 48%,
+      72px 72px,
+      72px 72px,
       center,
       center;
   }
 }
 
-@keyframes pcbPadsFloat {
+@keyframes chipFloat {
   from {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(-50%) rotate(45deg) translate3d(0, 0, 0);
   }
 
   to {
-    transform: translate3d(12px, -8px, 0);
+    transform: translateY(-50%) rotate(45deg) translate3d(14px, -10px, 0);
+  }
+}
+
+@media (max-width: 800px) {
+  header::after {
+    width: 300px;
+    height: 300px;
+    right: -90px;
+    opacity: 0.16;
   }
 }
