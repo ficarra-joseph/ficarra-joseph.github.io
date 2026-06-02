@@ -90,7 +90,7 @@ main {
 }
 
 section {
-  margin-bottom: 70px;
+  margin-bottom: 56px;
 }
 
 h2 {
@@ -751,4 +751,11 @@ li {
 .project-content h3,
 .card h3 {
   letter-spacing: -0.025em;
+}
+/* Consistent spacing between top content cards */
+
+#about,
+.announcement,
+#connect {
+  margin-bottom: 56px;
 }
