@@ -236,3 +236,134 @@ footer {
     margin-top: 34px;
   }
 }
+/* Peijie-inspired visual project cards */
+
+.section-header {
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  color: var(--sjsu-gold);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.section-description {
+  color: var(--muted);
+  max-width: 760px;
+  margin-top: -10px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #172033, #0f172a);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--sjsu-blue-light);
+  box-shadow: 0 24px 60px rgba(0, 85, 162, 0.22);
+}
+
+.project-visual {
+  min-height: 155px;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.45;
+}
+
+.project-visual::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -45px;
+  top: -45px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  filter: blur(2px);
+}
+
+.project-visual span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(11, 17, 32, 0.72);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.visual-audio {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(229, 168, 35, 0.55), transparent 28%),
+    linear-gradient(135deg, #0055A2, #0B1120 70%);
+}
+
+.visual-sensor {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(47, 143, 234, 0.65), transparent 28%),
+    linear-gradient(135deg, #0B1120, #064E3B);
+}
+
+.visual-automation {
+  background:
+    radial-gradient(circle at 75% 25%, rgba(229, 168, 35, 0.5), transparent 30%),
+    linear-gradient(135deg, #1E293B, #0055A2);
+}
+
+.visual-cad {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(47, 143, 234, 0.55), transparent 32%),
+    linear-gradient(135deg, #111827, #3B2F0B);
+}
+
+.project-content {
+  padding: 22px;
+}
+
+.project-meta {
+  color: var(--sjsu-gold);
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.project-content h3 {
+  margin: 0 0 12px;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.project-content p {
+  color: var(--muted);
+}
