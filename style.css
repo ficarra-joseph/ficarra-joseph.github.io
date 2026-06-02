@@ -550,3 +550,14 @@ footer {
     animation: none;
   }
 }
+/* Interactive particle background */
+
+#particle-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.85;
+}
