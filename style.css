@@ -862,3 +862,32 @@ nav {
 .project-hero p:first-of-type {
   color: var(--sjsu-gold);
 }
+/* School logo in hero */
+
+.school-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--sjsu-gold);
+  font-weight: 700;
+}
+
+.school-logo {
+  height: 32px;
+  width: auto;
+  display: inline-block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(229, 168, 35, 0.22));
+}
+
+@media (max-width: 700px) {
+  .school-line {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .school-logo {
+    height: 30px;
+  }
+}
