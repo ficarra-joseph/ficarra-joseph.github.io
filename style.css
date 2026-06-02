@@ -410,6 +410,7 @@ footer {
     linear-gradient(135deg, rgba(0, 85, 162, 0.18), rgba(17, 24, 39, 0.95)),
     #111827;
   border: 1px solid var(--border);
+  border-left: 4px solid var(--sjsu-blue-light);
   border-radius: 22px;
   padding: 30px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
@@ -701,4 +702,9 @@ header p {
 .about-card p {
   color: var(--muted);
   max-width: 850px;
+}
+/* Experience card accent */
+
+#experience .card {
+  border-left: 4px solid var(--sjsu-gold);
 }
