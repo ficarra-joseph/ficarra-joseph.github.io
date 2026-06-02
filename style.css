@@ -389,3 +389,9 @@ footer {
 .announcement p {
   color: var(--muted);
 }
+.visual-vibration {
+  background:
+    radial-gradient(circle at 72% 20%, rgba(229, 168, 35, 0.55), transparent 28%),
+    radial-gradient(circle at 22% 75%, rgba(47, 143, 234, 0.45), transparent 28%),
+    linear-gradient(135deg, #0B1120, #4C1D95);
+}
