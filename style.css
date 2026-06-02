@@ -703,10 +703,16 @@ header p {
   color: var(--muted);
   max-width: 850px;
 }
-/* Experience card accent */
+
+/* Alternating experience card accents */
 
 #experience .card {
   border-left: 4px solid var(--sjsu-gold);
+}
+
+#experience .card:nth-of-type(even) {
+  border-left-color: var(--sjsu-blue-light);
+}
 }
 /* Font polish */
 
