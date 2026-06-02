@@ -163,3 +163,35 @@ document.addEventListener("DOMContentLoaded", function () {
     revealObserver.observe(element);
   });
 });
+// Copy email button with floating confirmation
+document.querySelectorAll(".copy-email").forEach((button) => {
+  button.addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    const email = button.dataset.email;
+
+    try {
+      await navigator.clipboard.writeText(email);
+      showCopyToast("Copied Email");
+    } catch {
+      showCopyToast("Copy Failed");
+    }
+  });
+});
+
+function showCopyToast(message) {
+  const existingToast = document.querySelector(".copy-toast");
+  if (existingToast) {
+    existingToast.remove();
+  }
+
+  const toast = document.createElement("div");
+  toast.className = "copy-toast";
+  toast.textContent = message;
+
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 1300);
+}
