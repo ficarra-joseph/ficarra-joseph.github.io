@@ -765,3 +765,85 @@ li {
 #connect {
   margin-bottom: 56px;
 }
+/* Navigation dropdown */
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.dropbtn:hover,
+.dropdown:focus-within .dropbtn {
+  color: var(--sjsu-gold);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 290px;
+  background: rgba(17, 24, 39, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+  z-index: 50;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.dropdown-menu a {
+  display: block;
+  margin: 0;
+  padding: 13px 16px;
+  text-align: left;
+  color: var(--muted);
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(47, 143, 234, 0.16);
+  color: var(--sjsu-gold);
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  nav {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    min-width: 250px;
+  }
+}
