@@ -1558,3 +1558,56 @@ backdrop-filter: blur(26px) saturate(165%);
     justify-content: start;
   }
 }
+
+/* Copied email floating message */
+
+.copy-email {
+  cursor: pointer;
+  font: inherit;
+}
+
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--text);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.04)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(239, 68, 68, 0.55);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(239, 68, 68, 0.2);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  pointer-events: none;
+  animation: copyToastFloat 1.25s ease-out forwards;
+}
+
+@keyframes copyToastFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -35%);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -115%);
+  }
+}
