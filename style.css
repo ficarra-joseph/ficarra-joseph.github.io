@@ -22,10 +22,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(0, 85, 162, 0.25), transparent 35%),
-    radial-gradient(circle at top right, rgba(229, 168, 35, 0.14), transparent 30%),
-    var(--bg);
+  background: transparent;
   color: var(--text);
   line-height: 1.6;
 }
@@ -479,4 +476,77 @@ footer {
   background: rgba(229, 168, 35, 0.16);
   border-color: var(--sjsu-gold);
   color: var(--sjsu-gold);
+}
+/* Subtle animated technical background */
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 85, 162, 0.22), transparent 28%),
+    radial-gradient(circle at 80% 15%, rgba(229, 168, 35, 0.14), transparent 26%),
+    radial-gradient(circle at 45% 80%, rgba(47, 143, 234, 0.12), transparent 32%),
+    #0B1120;
+  animation: bgShift 18s ease-in-out infinite alternate;
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.35;
+  animation: gridDrift 28s linear infinite;
+}
+
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(0, 85, 162, 0.16), transparent 24%),
+    radial-gradient(circle at 70% 65%, rgba(229, 168, 35, 0.10), transparent 26%);
+  filter: blur(28px);
+  animation: glowFloat 24s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%;
+  }
+  100% {
+    background-position: 12% 8%, 88% 12%, 45% 92%;
+  }
+}
+
+@keyframes gridDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(42px, 42px, 0);
+  }
+}
+
+@keyframes glowFloat {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2%, 1%, 0) scale(1.04);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animated-bg,
+  .animated-bg::before,
+  .animated-bg::after {
+    animation: none;
+  }
 }
