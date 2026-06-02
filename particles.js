@@ -134,3 +134,16 @@ window.addEventListener("scroll", function () {
     scrollProgress.style.width = `${progress}%`;
   }
 });
+
+// Scroll progress bar
+const scrollProgress = document.querySelector(".scroll-progress");
+
+window.addEventListener("scroll", function () {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+  if (scrollProgress) {
+    scrollProgress.style.width = `${progress}%`;
+  }
+});
