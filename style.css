@@ -715,7 +715,7 @@ header p {
 #experience .card:nth-of-type(even) {
   border-left-color: var(--sjsu-blue-light);
 }
-}
+
 /* Font polish */
 
 h1,
@@ -891,7 +891,8 @@ nav {
 
   .school-logo {
     height: 30px;
-    /* Navigation dropdown */
+  }
+}
 
 nav {
   display: flex;
