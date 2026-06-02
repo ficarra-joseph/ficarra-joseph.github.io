@@ -575,7 +575,7 @@ header::before {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.38;
+  opacity: 0.50;
   background-image:
     linear-gradient(rgba(47, 143, 234, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(47, 143, 234, 0.08) 1px, transparent 1px),
@@ -598,7 +598,7 @@ header::after {
   top: 48%;
   transform: translateY(-50%) rotate(45deg);
   z-index: 0;
-  opacity: 0.18;
+  opacity: 0.15;
   border: 2px solid rgba(47, 143, 234, 0.55);
   border-radius: 34px;
   box-shadow:
