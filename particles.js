@@ -163,7 +163,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.01 }
 );
 
 revealElements.forEach((element) => {
