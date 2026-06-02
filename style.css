@@ -1092,24 +1092,16 @@ backdrop-filter: blur(26px) saturate(165%);
   background: linear-gradient(90deg, var(--sjsu-blue-light), var(--sjsu-gold));
   z-index: 10000;
 }
-/* Scroll progress bar */
+/* Section fade-in on scroll */
 
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  width: 0%;
-  background: linear-gradient(90deg, var(--sjsu-blue-light), var(--sjsu-gold));
-  z-index: 10000;
-  .reveal {
+.reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
-}
+
