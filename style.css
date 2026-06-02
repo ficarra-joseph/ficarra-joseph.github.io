@@ -1107,4 +1107,118 @@ backdrop-filter: blur(26px) saturate(165%);
   opacity: 1;
   transform: translateY(0);
 }
+/* Icon-style connect links */
 
+.icon-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.icon-link {
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 18px;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.035)
+    ),
+    rgba(15, 23, 42, 0.36);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 10px 28px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-5px);
+}
+
+.icon-badge {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.icon-badge svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* Individual colors */
+
+.icon-link.linkedin .icon-badge {
+  background: rgba(10, 102, 194, 0.18);
+  color: #0A66C2;
+  border: 1px solid rgba(10, 102, 194, 0.55);
+}
+
+.icon-link.github .icon-badge {
+  background: rgba(255, 255, 255, 0.12);
+  color: #F8FAFC;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.icon-link.email .icon-badge {
+  background: rgba(239, 68, 68, 0.18);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.52);
+}
+
+.icon-link.resume .icon-badge {
+  background: rgba(229, 168, 35, 0.18);
+  color: var(--sjsu-gold);
+  border: 1px solid rgba(229, 168, 35, 0.52);
+}
+
+.icon-link.linkedin:hover {
+  border-color: #0A66C2;
+  box-shadow: 0 16px 36px rgba(10, 102, 194, 0.18);
+}
+
+.icon-link.github:hover {
+  border-color: rgba(255, 255, 255, 0.48);
+  box-shadow: 0 16px 36px rgba(255, 255, 255, 0.08);
+}
+
+.icon-link.email:hover {
+  border-color: #EF4444;
+  box-shadow: 0 16px 36px rgba(239, 68, 68, 0.16);
+}
+
+.icon-link.resume:hover {
+  border-color: var(--sjsu-gold);
+  box-shadow: 0 16px 36px rgba(229, 168, 35, 0.16);
+}
+
+@media (max-width: 850px) {
+  .icon-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .icon-links {
+    grid-template-columns: 1fr;
+  }
+}
