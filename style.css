@@ -1256,3 +1256,182 @@ backdrop-filter: blur(26px) saturate(165%);
     height: 34px;
   }
 }
+
+/* Cleaner 2x2 icon connect layout */
+
+.connect-card {
+  grid-template-columns: minmax(0, 1fr) 230px;
+  gap: 34px;
+}
+
+.connect-main {
+  max-width: 760px;
+}
+
+.connect-main p {
+  max-width: 760px;
+}
+
+.icon-links {
+  display: grid;
+  grid-template-columns: repeat(2, 88px);
+  grid-template-rows: repeat(2, 88px);
+  gap: 22px;
+  justify-content: center;
+  align-content: center;
+}
+
+.icon-link {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: transform 0.2s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-5px) scale(1.04);
+}
+
+.icon-badge {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 16px 34px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.icon-link:hover .icon-badge {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.icon-badge svg {
+  width: 48px;
+  height: 48px;
+  fill: currentColor;
+}
+
+/* Individual icon button colors */
+
+.icon-link.linkedin .icon-badge {
+  background:
+    linear-gradient(135deg, rgba(10, 102, 194, 0.35), rgba(10, 102, 194, 0.14));
+  color: #0A66C2;
+  border: 1px solid rgba(10, 102, 194, 0.75);
+  box-shadow:
+    0 0 28px rgba(10, 102, 194, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.icon-link.github .icon-badge {
+  background:
+    linear-gradient(135deg, rgba(248, 250, 252, 0.26), rgba(248, 250, 252, 0.08));
+  color: #F8FAFC;
+  border: 1px solid rgba(248, 250, 252, 0.55);
+  box-shadow:
+    0 0 28px rgba(248, 250, 252, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.icon-link.email .icon-badge {
+  background:
+    linear-gradient(135deg, rgba(239, 68, 68, 0.34), rgba(239, 68, 68, 0.12));
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.75);
+  box-shadow:
+    0 0 28px rgba(239, 68, 68, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.icon-link.resume .icon-badge {
+  background:
+    linear-gradient(135deg, rgba(229, 168, 35, 0.36), rgba(229, 168, 35, 0.12));
+  color: var(--sjsu-gold);
+  border: 1px solid rgba(229, 168, 35, 0.75);
+  box-shadow:
+    0 0 28px rgba(229, 168, 35, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+/* Tooltip stays underneath each icon */
+
+.icon-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--text);
+  background: rgba(15, 23, 42, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.icon-link:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Mobile behavior */
+
+@media (max-width: 850px) {
+  .connect-card {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-links {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .icon-links {
+    grid-template-columns: repeat(2, 78px);
+    grid-template-rows: repeat(2, 78px);
+    gap: 18px;
+  }
+
+  .icon-link {
+    width: 78px;
+    height: 78px;
+  }
+
+  .icon-badge {
+    width: 72px;
+    height: 72px;
+    font-size: 42px;
+  }
+
+  .icon-badge svg {
+    width: 42px;
+    height: 42px;
+  }
+}
