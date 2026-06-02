@@ -1044,4 +1044,42 @@ backdrop-filter: blur(26px) saturate(165%);
 
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+}
+
+/* Click ripple animation */
+
+.click-ripple {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(229, 168, 35, 0.9) 0%,
+    rgba(47, 143, 234, 0.45) 38%,
+    rgba(47, 143, 234, 0.08) 68%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 18px rgba(229, 168, 35, 0.35),
+    0 0 28px rgba(47, 143, 234, 0.25);
+  animation: clickRipple 650ms ease-out forwards;
+}
+
+@keyframes clickRipple {
+  from {
+    width: 8px;
+    height: 8px;
+    opacity: 0.9;
+  }
+
+  to {
+    width: 82px;
+    height: 82px;
+    opacity: 0;
+  }
 }
