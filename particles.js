@@ -147,3 +147,25 @@ window.addEventListener("scroll", function () {
     scrollProgress.style.width = `${progress}%`;
   }
 });
+
+// Scroll reveal animation
+const revealElements = document.querySelectorAll("section");
+
+revealElements.forEach((element) => {
+  element.classList.add("reveal");
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
