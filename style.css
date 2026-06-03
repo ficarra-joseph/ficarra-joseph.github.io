@@ -2161,3 +2161,13 @@ backdrop-filter: blur(26px) saturate(165%);
 #about {
   scroll-margin-top: 90px;
 }
+
+/* Adjust hero spacing after removing subtitle */
+
+.hero-type-line {
+  margin-bottom: 80px;
+}
+
+.hero .scroll-arrow {
+  bottom: 42px;
+}
