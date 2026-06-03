@@ -195,3 +195,37 @@ function showCopyToast(message) {
     toast.remove();
   }, 1300);
 }
+
+// Scroll-triggered fade-in animations
+document.addEventListener("DOMContentLoaded", function () {
+  const revealItems = document.querySelectorAll(
+    "main section, .project-card, .card, .skills-grid > div"
+  );
+
+  revealItems.forEach((item, index) => {
+    item.classList.add("reveal");
+
+    if (item.classList.contains("project-card")) {
+      item.style.transitionDelay = `${Math.min(index * 45, 220)}ms`;
+    }
+  });
+
+  const revealObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach((item) => {
+    revealObserver.observe(item);
+  });
+});
