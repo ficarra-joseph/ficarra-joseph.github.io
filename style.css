@@ -2120,3 +2120,38 @@ backdrop-filter: blur(26px) saturate(165%);
     transform: translateX(-50%) translateY(8px);
   }
 }
+
+/* Remove rounded chip blocks from hero circuit background */
+.circuit-chips {
+  display: none;
+}
+
+/* Calmer circuit nodes / vias */
+
+.circuit-nodes circle {
+  fill: rgba(11, 17, 32, 0.82);
+  stroke: rgba(185, 221, 255, 0.48);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px rgba(47, 143, 234, 0.22));
+  animation: nodeSoftGlow 8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.circuit-nodes circle:nth-child(4n) {
+  stroke: rgba(229, 168, 35, 0.52);
+  filter: drop-shadow(0 0 6px rgba(229, 168, 35, 0.20));
+  animation-delay: -3s;
+}
+
+/* Softer glow only — no size pulsing */
+@keyframes nodeSoftGlow {
+  0%, 100% {
+    opacity: 0.42;
+    filter: drop-shadow(0 0 4px rgba(47, 143, 234, 0.16));
+  }
+
+  50% {
+    opacity: 0.72;
+    filter: drop-shadow(0 0 9px rgba(47, 143, 234, 0.28));
+  }
+}
