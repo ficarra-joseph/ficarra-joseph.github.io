@@ -2165,7 +2165,7 @@ backdrop-filter: blur(26px) saturate(165%);
 /* Adjust hero spacing after removing subtitle */
 
 .hero-type-line {
-  margin-bottom: 80px;
+  margin-bottom: 150px;
 }
 
 .hero .scroll-arrow {
