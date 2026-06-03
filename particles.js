@@ -229,3 +229,60 @@ document.addEventListener("DOMContentLoaded", function () {
     revealObserver.observe(item);
   });
 });
+
+// Hero typewriter animation
+document.addEventListener("DOMContentLoaded", function () {
+  const typeTarget = document.getElementById("typewriter");
+
+  if (!typeTarget) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const phrases = [
+    "semiconductor applications.",
+    "silicon validation.",
+    "hardware test.",
+    "engineering automation.",
+    "technical problem solving."
+  ];
+
+  if (prefersReducedMotion) {
+    typeTarget.textContent = phrases[0];
+    return;
+  }
+
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let isDeleting = false;
+
+  function typeLoop() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+      letterIndex--;
+    } else {
+      letterIndex++;
+    }
+
+    typeTarget.textContent = currentPhrase.substring(0, letterIndex);
+
+    let delay = isDeleting ? 45 : 75;
+
+    if (!isDeleting && letterIndex === currentPhrase.length) {
+      delay = 1300;
+      isDeleting = true;
+    }
+
+    if (isDeleting && letterIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      delay = 350;
+    }
+
+    setTimeout(typeLoop, delay);
+  }
+
+  typeLoop();
+});
