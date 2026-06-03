@@ -1917,7 +1917,7 @@ backdrop-filter: blur(26px) saturate(165%);
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.38;
+  opacity: 0.30;
   pointer-events: none;
   overflow: hidden;
 }
