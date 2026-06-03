@@ -2155,3 +2155,9 @@ backdrop-filter: blur(26px) saturate(165%);
     filter: drop-shadow(0 0 9px rgba(47, 143, 234, 0.28));
   }
 }
+
+/* Adjust where the hero arrow lands */
+
+#about {
+  scroll-margin-top: 90px;
+}
