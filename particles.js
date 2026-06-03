@@ -240,14 +240,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const phrases = [
-    "semiconductor applications.",
-    "silicon validation.",
-    "hardware test.",
-    "engineering automation.",
-    "technical problem solving."
-  ];
-
+const phrases = [
+  "applications engineering.",
+  "hardware validation.",
+  "sensor systems.",
+  "technical documentation.",
+  "hardware debugging."
+];
+  
   if (prefersReducedMotion) {
     typeTarget.textContent = phrases[0];
     return;
