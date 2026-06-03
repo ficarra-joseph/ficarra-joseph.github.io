@@ -1611,3 +1611,36 @@ backdrop-filter: blur(26px) saturate(165%);
     transform: translate(-50%, -115%);
   }
 }
+/* Scroll-triggered fade-in animations */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: slightly stagger project cards */
+.project-card.reveal {
+  transform: translateY(26px) scale(0.985);
+}
+
+.project-card.reveal.reveal-visible {
+  transform: translateY(0) scale(1);
+}
+
+/* Respect reduced motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .project-card.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
