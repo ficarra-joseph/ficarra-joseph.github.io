@@ -23,8 +23,8 @@ function resizeCanvas() {
     particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
+      vx: (Math.random() - 0.5) * 0.12,
+      vy: (Math.random() - 0.5) * 0.12,
       radius: Math.random() * 1.8 + 0.8
     });
   }
@@ -82,8 +82,8 @@ function updateParticles() {
         drawLine(p.x, p.y, mouse.x, mouse.y, opacity, "229, 168, 35");
 
         const force = (mouse.radius - mouseDistance) / mouse.radius;
-        p.x += dxMouse * force * 0.004;
-        p.y += dyMouse * force * 0.004;
+p.x += dxMouse * force * 0.0015;
+p.y += dyMouse * force * 0.0015;
       }
     }
   }
