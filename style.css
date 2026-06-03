@@ -1917,7 +1917,7 @@ backdrop-filter: blur(26px) saturate(165%);
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.58;
+  opacity: 0.42;
   pointer-events: none;
   overflow: hidden;
 }
@@ -1977,7 +1977,7 @@ backdrop-filter: blur(26px) saturate(165%);
   filter:
     drop-shadow(0 0 8px rgba(248, 250, 252, 0.42))
     drop-shadow(0 0 14px rgba(47, 143, 234, 0.28));
-  animation: circuitSignalFlow 4.8s linear infinite;
+  animation: circuitSignalFlow 7s linear infinite;
 }
 
 /* Gold moving signal accents */
