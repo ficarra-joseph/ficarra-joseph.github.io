@@ -2223,3 +2223,43 @@ backdrop-filter: blur(26px) saturate(165%);
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
+
+/* Cleaner skill icons without square backgrounds */
+
+.skill-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: var(--sjsu-gold);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    filter 0.2s ease;
+}
+
+.skill-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+/* Stroke-based icons, like the new microchip */
+.skill-icon .stroke-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skills-grid > div:hover .skill-icon {
+  transform: translateY(-2px) scale(1.08);
+  color: var(--sjsu-blue-light);
+  filter: drop-shadow(0 0 10px rgba(47, 143, 234, 0.35));
+}
